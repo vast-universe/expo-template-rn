@@ -8,9 +8,9 @@ import axios, {
 // React Native 全局变量
 declare const __DEV__: boolean;
 
-// 配置
-const BASE_URL = 'https://api.example.com';
-const TIMEOUT = 10000;
+// 配置 - 从环境变量读取
+const BASE_URL = process.env.EXPO_PUBLIC_API_URL || 'https://api.example.com';
+const TIMEOUT = Number(process.env.EXPO_PUBLIC_API_TIMEOUT) || 10000;
 
 // Token 获取函数 - 根据你的状态管理方案修改
 const getToken = (): string | null => {
