@@ -109,6 +109,11 @@ feature-env/
 
 此仓库由 [create-rn-app](https://github.com/your-username/create-rn-app) CLI 自动拉取使用，无需手动操作。
 
+### 拉取逻辑
+
+1. 开发时：CLI 优先从本地 `expo-template-rn/features/` 复制
+2. 发布后：通过 [degit](https://github.com/Rich-Harris/degit) 从 GitHub 拉取
+
 ## 🔗 相关
 
 - [create-rn-app](https://github.com/your-username/create-rn-app) - CLI 工具
