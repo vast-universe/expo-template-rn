@@ -1,79 +1,118 @@
 # expo-template-rn
 
-配合 `create-rn-app` CLI 使用的模板仓库
+[create-rn-app](https://github.com/your-username/create-rn-app) 的模板仓库。
 
-## 目录结构
+## 📁 模板结构
 
 ```
 features/
-├── feature-redux/           # Redux Toolkit + redux-persist
-│   ├── index.ts
-│   ├── hooks.ts
-│   └── slices/
-│       ├── rootReducer.ts
-│       └── auth/
-│           ├── index.ts
-│           └── slice.ts
-├── feature-axios/           # Axios 封装
-│   ├── index.ts
-│   ├── request.ts
-│   ├── hooks/
-│   │   ├── index.ts
-│   │   └── useRequest.ts
-│   └── services/
-│       ├── index.ts
-│       ├── auth.service.ts
-│       └── user.service.ts
-├── feature-i18n/            # i18next 国际化
-│   ├── index.ts
-│   └── locales/
-│       ├── zh.ts
-│       └── en.ts
-└── feature-nativewind/      # NativeWind v5
-    ├── global.css
-    ├── metro.config.js
-    ├── postcss.config.mjs
-    └── nativewind-env.d.ts
+├── feature-redux/        # Redux Toolkit + 持久化
+├── feature-axios/        # Axios + useRequest
+├── feature-i18n/         # i18next 国际化
+├── feature-nativewind/   # NativeWind + cn + cva
+├── feature-toast/        # Toast 消息提示
+├── feature-lint/         # Husky + Prettier
+└── feature-env/          # 环境变量
 ```
 
-## 使用
-
-CLI 会根据用户选择，将对应 feature 目录的文件复制到项目中：
-
-| Feature | 目标目录 |
-|---------|----------|
-| `feature-redux` | `store/` |
-| `feature-axios` | `api/` |
-| `feature-i18n` | `i18n/` |
-| `feature-nativewind` | 根目录 |
-
-## 模板说明
+## 📦 模板说明
 
 ### feature-redux
 
-- Redux Toolkit + redux-persist + AsyncStorage
-- 预置 auth slice（user、token、isLoading）
-- 导出 `useAppDispatch`、`useAppSelector` hooks
+Redux Toolkit + redux-persist + AsyncStorage
+
+```
+feature-redux/
+├── index.ts          # store 配置
+├── hooks.ts          # useAppDispatch, useAppSelector
+└── slices/
+    ├── rootReducer.ts
+    └── auth/
+        ├── slice.ts
+        └── index.ts
+```
 
 ### feature-axios
 
-- Axios 实例封装（拦截器、Token 注入、错误处理）
-- `useRequest` hook（自动取消请求）
-- 示例 services（auth、user）
+Axios 封装 + useRequest Hook
+
+```
+feature-axios/
+├── index.ts
+├── request.ts        # axios 实例 + 拦截器
+├── hooks/
+│   └── useRequest.ts # 自动取消请求
+└── services/
+    ├── auth.service.ts
+    └── user.service.ts
+```
 
 ### feature-i18n
 
-- i18next + react-i18next
-- 中/英双语支持
-- `changeLanguage`、`getCurrentLanguage` 工具函数
+i18next 多语言支持
+
+```
+feature-i18n/
+├── index.ts
+└── locales/
+    ├── zh.ts
+    └── en.ts
+```
 
 ### feature-nativewind
 
-- NativeWind v5 配置
-- Tailwind CSS v4
-- PostCSS 配置
+NativeWind v5 配置 + UI 组件
 
-## License
+```
+feature-nativewind/
+├── global.css
+├── metro.config.js
+├── postcss.config.mjs
+├── nativewind-env.d.ts
+├── components/
+│   └── ui/
+│       └── Button.tsx
+└── utils/
+    └── cn.ts
+```
+
+### feature-toast
+
+react-native-toast-message 封装
+
+```
+feature-toast/
+└── index.ts
+```
+
+### feature-lint
+
+Husky + Prettier + lint-staged
+
+```
+feature-lint/
+├── .prettierrc
+├── .prettierignore
+└── .lintstagedrc.js
+```
+
+### feature-env
+
+环境变量配置
+
+```
+feature-env/
+└── .env.example
+```
+
+## 🔧 使用方式
+
+此仓库由 [create-rn-app](https://github.com/your-username/create-rn-app) CLI 自动拉取使用，无需手动操作。
+
+## 🔗 相关
+
+- [create-rn-app](https://github.com/your-username/create-rn-app) - CLI 工具
+
+## 📄 License
 
 MIT
-# expo-template-rn
