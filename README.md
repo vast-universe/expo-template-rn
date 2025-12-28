@@ -11,6 +11,7 @@ features/
 ├── feature-i18n/         # i18next 国际化
 ├── feature-nativewind/   # NativeWind + cn + cva
 ├── feature-toast/        # Toast 消息提示
+├── feature-form/         # 表单验证 (react-hook-form + zod)
 ├── feature-lint/         # Husky + Prettier
 └── feature-env/          # 环境变量
 ```
@@ -34,7 +35,7 @@ feature-redux/
 
 ### feature-axios
 
-Axios 封装 + useRequest Hook
+Axios 封装 + useRequest Hook（复制到 `services/`）
 
 ```
 feature-axios/
@@ -49,7 +50,7 @@ feature-axios/
 
 ### feature-i18n
 
-i18next 多语言支持
+i18next 多语言支持（复制到 `lib/i18n/`）
 
 ```
 feature-i18n/
@@ -78,11 +79,26 @@ feature-nativewind/
 
 ### feature-toast
 
-react-native-toast-message 封装
+react-native-toast-message 封装（复制到 `lib/toast/`）
 
 ```
 feature-toast/
 └── index.ts
+```
+
+### feature-form
+
+react-hook-form + zod 表单验证（复制到 `lib/form/`）
+
+```
+feature-form/
+├── index.ts              # 导出 useForm, Controller, zodResolver, z
+├── schemas/
+│   └── index.ts          # 常用验证规则
+├── components/
+│   └── FormInput.tsx     # 表单输入组件
+└── examples/
+    └── LoginForm.tsx     # 登录表单示例
 ```
 
 ### feature-lint
